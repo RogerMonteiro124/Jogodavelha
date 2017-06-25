@@ -5,159 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/cinzar"
+    android:background="@drawable/background"
     tools:context="roger.monteiro.jogodavelha.MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtGame"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:text="# JOGO DA VELHA #"
-        android:textStyle="italic"
-        android:textSize="36dp"
-        android:textColor="@android:color/holo_red_dark"/>
-
-    <RelativeLayout
-        android:layout_width="379dp"
-        android:layout_height="54dp">
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/a11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-        <Button
-            android:id="@+id/a12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-        <Button
-            android:id="@+id/a13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/a21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-
-        <Button
-            android:id="@+id/a22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-
-        <Button
-            android:id="@+id/a23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/a31"
-            android:layout_width="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <Button
-            android:id="@+id/a32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-
-        <Button
-            android:id="@+id/a33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="" />
-    </LinearLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start">
-
+        android:layout_height="match_parent">
         <Button
-            android:id="@+id/bntrestart"
-            android:background="@android:color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="31dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="48dp"
-            android:text="Reiniciar"
-            android:textColor="@android:color/holo_orange_light"/>
-
-        <TextView
-            android:id="@+id/txtVez"
+            android:id="@+id/btnBot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="60dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="46dp"
-            android:text=""
-            android:textColor="#0000FF"
-            android:textStyle="bold"
-            android:textSize="28dp"/>
-        <TextView
-            android:id="@+id/txtResultado"
+            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="174dp"
+            android:text="Bot" />
+
+        <Button
+            android:id="@+id/btnSozinho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="35dp"
-            android:textColor="#009900"
-            android:textStyle="bold"
-            android:layout_below="@+id/txtVez"
-            android:layout_alignLeft="@+id/txtVez"
-            android:layout_alignStart="@+id/txtVez"
-            android:layout_marginTop="25dp" />
-
+            android:layout_marginEnd="27dp"
+            android:layout_marginRight="27dp"
+            android:text="Multiplayer"
+            android:layout_alignBaseline="@+id/btnBot"
+            android:layout_alignBottom="@+id/btnBot"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
+
 
 </LinearLayout>
 
