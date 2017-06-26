@@ -156,60 +156,20 @@ public class BotActivity extends AppCompatActivity {
         a33.setEnabled(true);
     }
 
-    public void jogada1(){
-        a22.setText("O");
-        a22.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-        cont5++;
-        if(a21.getText()=="X"||a31.getText()=="X"||a32.getText()=="X"||a13.getText()=="X"||a23.getText()=="X"){
-            a33.setText("O");
-            a33.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont9++;
-        }else
-        if (a33.getText()=="X"){
-            a31.setText("O");
-            a31.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont7++;
-        }else
-        if (a13.getText()=="X"){
-            a21.setText("O");
-            a21.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont4++;
-        }else if (a21.getText()=="X"){
-            a13.setText("O");
-            a13.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont3++;
+    public boolean usuarioJoga(Button pos){
+        if (pos.getText()=="X"){
+            return true;
+        }else{
+            return false;
         }
-
     }
-
-    public void jogada2(){
-        a31.setText("O");
-        a31.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-        cont7++;
-        if(a22.getText()=="X"||a12.getText()=="X"||a23.getText()=="X"||a32.getText()=="X"||a33.getText()=="X"){
-            a21.setText("O");
-            a21.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont4++;
-
-        }else
-        if (a21.getText()=="X"){
-            a33.setText("O");
-            a33.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont9++;
-        }
-        else if (a22.getText()=="X"){
-            a32.setText("O");
-            a32.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont8++;
-        }else if (a32.getText()=="X"){
-            a22.setText("O");
-            a22.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont5++;
-        }
+    public void botJoga(Button pos){
+        pos.setText("O");
+        pos.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
     }
 
     /*Jogada do Bot*/
-    public void botJoga(){
+    public void Jogo(){
         if(checaVitoriaO()==1){
             fim();
         }
@@ -217,31 +177,30 @@ public class BotActivity extends AppCompatActivity {
             fim();
         }
         a11.setText("O");
-        jogada=0;
         a11.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-        if (a12.getText()=="X"){
-            a22.setText("O");
-            a22.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-            cont5++;
-            if((a21.getText()=="X"||a31.getText()=="X"||a32.getText()=="X"||a13.getText()=="X"||a23.getText()=="X") && a33.getText()==""){
-                a33.setText("O");
-                a33.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-                cont9++;
-            }else
-            if (a33.getText()=="X"){
-                a31.setText("O");
-                a31.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-                cont7++;
-            }else
-            if (a13.getText()=="X"){
-                a21.setText("O");
-                a21.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-                cont4++;
-            }else if (a21.getText()=="X"){
-                a13.setText("O");
-                a13.setTextColor(getApplication().getResources().getColor(R.color.colorPrimary));
-                cont3++;
+        if (contBot==0){
+            if (usuarioJoga(a12)){
+                botJoga(a22);
+                contBot++;
             }
+        }else if (contBot==1){
+            if (!usuarioJoga(a33)){
+                botJoga(a33);
+                contBot++;
+            }else if (usuarioJoga(a33)){
+                botJoga(a31);
+                contBot++;
+            }
+        }else if (contBot==2){
+            if (!usuarioJoga(a21)){
+                botJoga(a21);
+                contBot++;
+            }else if (!usuarioJoga(a13)){
+                botJoga(a13);
+                contBot++;
+            }
+        }else if (contBot==3){
+            
         }
 
     }
